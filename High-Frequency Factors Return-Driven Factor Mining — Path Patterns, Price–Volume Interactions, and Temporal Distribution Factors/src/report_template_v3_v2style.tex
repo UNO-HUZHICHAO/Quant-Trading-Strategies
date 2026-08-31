@@ -1,0 +1,72 @@
+% ==================== 研报 V2 专用 pandoc 模板（卖方研报风格 · 红色主题） ====================
+\documentclass[UTF8,a4paper,zihao=-4,fontset=windows]{ctexart}
+
+% ---------- 页边距（压缩留白） ----------
+\usepackage[a4paper,top=2.0cm,bottom=2.0cm,left=1.9cm,right=1.9cm]{geometry}
+
+% ---------- 常用宏包 ----------
+\usepackage{amsmath,amssymb}
+\usepackage{calc}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{etoolbox}
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+
+% ---------- 配色（红色主题） ----------
+\definecolor{reportred}{RGB}{180,0,0}
+\definecolor{reportgray}{RGB}{246,246,246}
+
+% ---------- 超链接 / 书签 ----------
+\hypersetup{
+  colorlinks=true, linkcolor=reportred, urlcolor=reportred,
+  bookmarks=true, bookmarksnumbered=true,
+  pdftitle={高频因子研究：日内量价路径中的截面信息},
+}
+
+% ---------- 页眉页脚（金融工程深度报告风格，红色分隔线） ----------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\heiti 金融工程｜深度报告}
+\fancyhead[R]{\small 日内量价路径中的截面信息}
+\fancyfoot[C]{\small\thepage}
+\setlength{\headheight}{24pt}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{reportred}\leaders\hrule height \headrulewidth\hfill}}
+
+% ---------- 表格样式：small + 紧凑列距 + booktabs ----------
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.15}
+\BeforeBeginEnvironment{longtable}{\small}
+\BeforeBeginEnvironment{tabular}{\small}
+% 表注：去掉自动"表 N"前缀（用预处理注入的手工编号），字体小号、居中（longtable 默认居中）
+\captionsetup[longtable]{font=small,labelformat=empty}
+
+% ---------- 标题层级（md 已含手工编号，关闭自动编号；压缩间距减少留白） ----------
+\ctexset{
+  section = { format = {\Large\bfseries\heiti\textcolor{reportred}}, numbering = false, beforeskip = 14pt, afterskip = 6pt },
+  subsection = { format = {\large\bfseries\heiti}, numbering = false, beforeskip = 10pt, afterskip = 4pt },
+}
+
+% ---------- 目录深度 ----------
+\setcounter{tocdepth}{2}
+
+% ---------- 图片默认宽度 ----------
+\graphicspath{{figs_v3/}{figs/}}
+
+% ---------- pandoc 自定义模板缺省的辅助宏 ----------
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\pandocbounded}[1]{\makebox[1.1\linewidth][c]{#1}}
+% 宽松断行容差，减少末行轻微溢出
+\emergencystretch=2em
+
+\begin{document}
+$body$
+\end{document}

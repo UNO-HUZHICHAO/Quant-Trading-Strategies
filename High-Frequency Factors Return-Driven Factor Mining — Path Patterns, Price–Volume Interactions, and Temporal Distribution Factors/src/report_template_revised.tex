@@ -1,0 +1,42 @@
+% 修订版研报 Pandoc 模板
+\documentclass[UTF8,a4paper,zihao=-4,fontset=windows]{ctexart}
+
+\usepackage[a4paper,top=2.2cm,bottom=2.2cm,left=1.9cm,right=1.9cm,headheight=24pt,headsep=10pt]{geometry}
+\usepackage{amsmath,amssymb,calc,booktabs,longtable,array,multirow,caption,float,graphicx,xcolor,etoolbox,fancyhdr,tcolorbox,hyperref}
+
+\definecolor{reportred}{RGB}{165,42,50}
+\definecolor{reportblue}{RGB}{49,90,125}
+\definecolor{reportgray}{RGB}{246,246,246}
+\hypersetup{colorlinks=true,linkcolor=reportred,urlcolor=reportblue,bookmarks=true,bookmarksnumbered=true,pdftitle={日内量价路径中的截面信息}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\heiti 金融工程｜深度研究}
+\fancyhead[R]{\small 日内量价路径中的截面信息}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{reportred}\leaders\hrule height \headrulewidth\hfill}}
+
+\setlength{\tabcolsep}{4.5pt}
+\renewcommand{\arraystretch}{1.16}
+\BeforeBeginEnvironment{longtable}{\small}
+\BeforeBeginEnvironment{tabular}{\small}
+\captionsetup[longtable]{font=small,labelformat=empty}
+\captionsetup[figure]{font=small,labelformat=empty}
+
+\ctexset{
+  section={format={\Large\bfseries\heiti\textcolor{reportred}},numbering=false,beforeskip=15pt,afterskip=7pt},
+  subsection={format={\large\bfseries\heiti},numbering=false,beforeskip=11pt,afterskip=5pt},
+  subsubsection={format={\normalsize\bfseries\heiti\textcolor{reportblue}},numbering=false,beforeskip=8pt,afterskip=3pt}
+}
+\setcounter{tocdepth}{2}
+\graphicspath{{figs_revised/}{figs/}}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\pandocbounded}[1]{\makebox[1.02\linewidth][c]{#1}}
+\emergencystretch=3em
+\setlength{\parskip}{2pt}
+\linespread{1.18}
+
+\begin{document}
+$body$
+\end{document}

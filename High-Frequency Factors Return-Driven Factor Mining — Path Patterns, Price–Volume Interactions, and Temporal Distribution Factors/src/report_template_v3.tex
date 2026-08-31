@@ -1,0 +1,58 @@
+% 基于研报 V2 的修订版模板：保留原章节层级，统一版式与图表风格
+\documentclass[UTF8,a4paper,zihao=-4,fontset=windows]{ctexart}
+
+\usepackage[a4paper,top=2.15cm,bottom=2.15cm,left=1.85cm,right=1.85cm,headheight=24pt,headsep=10pt]{geometry}
+\usepackage{amsmath,amssymb,calc,booktabs,longtable,array,multirow,caption,float,graphicx,xcolor,etoolbox,fancyhdr,tcolorbox,hyperref}
+
+\setCJKmainfont{Microsoft YaHei}
+\setCJKsansfont{Microsoft YaHei}
+\definecolor{reportred}{RGB}{157,38,46}
+\definecolor{reportblue}{RGB}{43,77,105}
+\definecolor{reportgray}{RGB}{246,246,246}
+\definecolor{reportgold}{RGB}{174,132,62}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=reportred,
+  urlcolor=reportblue,
+  bookmarks=true,
+  bookmarksnumbered=true,
+  pdftitle={高频因子研究：日内量价路径中的截面信息}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\heiti 金融工程｜高频因子研究}
+\fancyhead[R]{\small 日内量价路径中的截面信息}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{reportred}\leaders\hrule height \headrulewidth\hfill}}
+
+\setlength{\tabcolsep}{4.2pt}
+\renewcommand{\arraystretch}{1.16}
+\setlength\LTleft{0pt}
+\setlength\LTright{0pt plus 1fill}
+\BeforeBeginEnvironment{longtable}{\small}
+\BeforeBeginEnvironment{tabular}{\small}
+\captionsetup[longtable]{font=small,labelformat=empty,justification=centering}
+\captionsetup[figure]{font=small,labelformat=empty,justification=centering}
+
+\ctexset{
+  contentsname={目录},
+  section={format={\Large\bfseries\heiti\textcolor{reportred}},numbering=false,beforeskip=15pt,afterskip=7pt},
+  subsection={format={\large\bfseries\heiti},numbering=false,beforeskip=11pt,afterskip=5pt},
+  subsubsection={format={\normalsize\bfseries\heiti\textcolor{reportblue}},numbering=false,beforeskip=8pt,afterskip=3pt}
+}
+
+\setcounter{tocdepth}{2}
+\graphicspath{{figs_v3/}{figs_revised/}{figs/}}
+\providecommand{\tightlist}{\setlength{\itemsep}{1pt}\setlength{\parskip}{0pt}}
+\providecommand{\pandocbounded}[1]{\makebox[1.02\linewidth][c]{#1}}
+\emergencystretch=3em
+\setlength{\parindent}{2em}
+\setlength{\parskip}{2pt}
+\linespread{1.16}
+
+\begin{document}
+$body$
+\end{document}
